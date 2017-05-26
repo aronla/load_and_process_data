@@ -9,7 +9,7 @@ class DataToTFRecords:
     word_sentence_list = None
 
     def load_data(self, file_name):
-        with open(current_dir + file_name, 'rb') as f:
+        with open(file_name, 'rb') as f:
             self.int_sentence_list, self.word_sentence_list = pickle.load(f)
 
     def write_to_tfrecords(self, tfrecord_file):
@@ -32,6 +32,6 @@ class DataToTFRecords:
         self.write_to_tfrecords(save_file_name)
 
     def main(self):
-        file_name = '/tests/test_data.pickle'
+        file_name = current_dir + '/tests/test_data.pickle'
         save_file_name = 'tf_test.tfrecord'
         self.load_and_write(file_name, save_file_name)
