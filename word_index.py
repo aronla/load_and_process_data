@@ -61,6 +61,5 @@ class WordIndex:
 if __name__ == '__main__':
     word_index = WordIndex()
     # word_index.save_word_index('wordindex.pickle')
-
     most_common_counter = pickle.load(open('results/most_common_50000_tokens_counter.pickle', 'rb'))
     word_index.save_word_index_from_counter('word_index_most_common_50000_tokens.pickle', most_common_counter)

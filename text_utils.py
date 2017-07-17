@@ -17,8 +17,19 @@ class TextUtils:
         return ''.join([ ch for ch in line if ch in whitelist])
 
     @staticmethod
+    def filter_token(token):
+        return TextUtils.filter_line(token)
+
+    @staticmethod
     def remove_single_letter_tokens(tokenized_line):
         return [token for token in tokenized_line if len(token) > 1]
+
+    @staticmethod
+    def remove_single_letter_token(token):
+        if len(token) <= 1:
+            return ''
+        else:
+            return token
 
     @staticmethod
     def lower_case(line):
